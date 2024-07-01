@@ -39,13 +39,14 @@ import java.util.logging.Logger;
 public class Employee extends javax.swing.JFrame {
     
     private static final String CSV_FILE = "src\\motorph9\\EmployeeDetails.csv";
-    private String currentEmployeeId;
-    private String firstName;
+    private final Dashboard dashboard;
+    //private String currentEmployeeId;
+    //private String firstName;
     
     /**
      * Creates new form Employee
      */
-    public Employee(String currentEmployeeId, String firstName) {
+    public Employee(Dashboard dashboard) {
         initComponents();
        
         setLocationRelativeTo(null);
@@ -56,8 +57,9 @@ public class Employee extends javax.swing.JFrame {
 
         jButtonUpdate.setEnabled(false); 
         
-        this.currentEmployeeId = currentEmployeeId;
-        this.firstName = firstName;
+        this.dashboard = dashboard;
+        //this.currentEmployeeId = currentEmployeeId;
+        //this.firstName = firstName;
         
        
         
@@ -598,8 +600,9 @@ public class Employee extends javax.swing.JFrame {
 
     private void jButtonDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDashboardActionPerformed
         
-        Dashboard newClassInstance = new Dashboard(firstName,currentEmployeeId);
-                 newClassInstance.setVisible(true);
+        dashboard.setVisible(true);
+        /*Dashboard newClassInstance = new Dashboard(firstName,currentEmployeeId);
+                 newClassInstance.setVisible(true);*/
                  
                  dispose();
     }//GEN-LAST:event_jButtonDashboardActionPerformed
@@ -622,7 +625,7 @@ public class Employee extends javax.swing.JFrame {
                     String pagibigNo = (String) jTableEmployees.getValueAt(selectedRow, 6);
 
                     
-                    EmployeeRecords newClassInstance = new EmployeeRecords(employeeNumber,firstName);
+                    EmployeeRecords newClassInstance = new EmployeeRecords(employeeNumber,dashboard);
                             newClassInstance.setVisible(true);
                             
                             dispose();
@@ -671,7 +674,7 @@ public class Employee extends javax.swing.JFrame {
 
     private void jButtonAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddActionPerformed
         // TODO add your handling code here:
-        AddEmployee newClassInstance = new AddEmployee(currentEmployeeId, firstName);
+        AddEmployee newClassInstance = new AddEmployee(dashboard);
                    newClassInstance.setVisible(true);
                 
                 dispose();

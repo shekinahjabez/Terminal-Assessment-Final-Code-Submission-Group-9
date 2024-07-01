@@ -31,18 +31,20 @@ public class LeaveRequest extends javax.swing.JFrame {
     private List<String[]> leaveBalances;
     private List<LeaveRequestData> leaveRequests = new ArrayList<>();
     private String leaveBalancesFilePath = "src\\motorph9\\LeaveBalances.csv";
-    private String currentEmployeeId;
-    private String firstName;
+    //private String currentEmployeeId;
+    //private String firstName;
+    private final Dashboard dashboard;
     /**
      * Creates new form LeaveRequest
      */
-    public LeaveRequest(String currentEmployeeId, String firstName) {
+    public LeaveRequest(Dashboard dashboard) {
         initComponents();
         
         leaveTracker = loadLeaveTracker("src\\motorph9\\LeaveBalances.csv");
         csvReader = new CSVReader("src\\motorph9\\LeaveBalances.csv");
-        this.currentEmployeeId = currentEmployeeId;
-        this.firstName = firstName;
+        //this.currentEmployeeId = currentEmployeeId;
+        //this.firstName = firstName;
+        this.dashboard = dashboard;
 
         //loadLeaveBalancesFromCSV();
         //updateLeaveBalances();
@@ -581,8 +583,10 @@ public class LeaveRequest extends javax.swing.JFrame {
 
     private void jButtonDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDashboardActionPerformed
         // TODO add your handling code here:
-       Dashboard newClassInstance = new Dashboard(firstName,currentEmployeeId);
-                 newClassInstance.setVisible(true);
+        
+        dashboard.setVisible(true);
+       /*Dashboard newClassInstance = new Dashboard(firstName,currentEmployeeId);
+                 newClassInstance.setVisible(true);*/
 
                  
                  dispose(); 
