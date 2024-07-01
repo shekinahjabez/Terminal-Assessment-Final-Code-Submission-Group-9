@@ -1,5 +1,6 @@
 # Terminal-Assessment-Final-Code-Submission-Group-9
-MotorPH Payroll System
+Welcome to MotorPAY the MotorPH Payroll System
+Developed by Ainah Pagulayan, Anna Patricia Evasco, Jesus Elijah Santos, Kim Charlotte Anicete, Kristine Paul Garcia, Patrick Paul Dela Cruz, Shekinah Jabez Florentino, and Xyril Anne Fabellon with the guidance of Sir Glenn Baluyot.
 
 ## Dependencies
 
