@@ -28,7 +28,7 @@ import javax.swing.*;
 public class Login extends javax.swing.JFrame {
 
     private static final String CSV_FILE = "src/motorph9/Credentials.csv";
-    private String fname;
+    //private String fname;
     
     
     
@@ -227,7 +227,7 @@ public class Login extends javax.swing.JFrame {
             List<String[]> allData = csvReader.readAll();
             for (String[] row : allData) {
                 if (row[0].equalsIgnoreCase(userName) && row[1].equals(passWord)) {
-                    fname = row[2];
+                    //fname = row[2];
                     return new User(userName, row[2], row[3]);
                 }
             }

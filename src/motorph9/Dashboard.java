@@ -23,8 +23,9 @@ import java.awt.*;
  * @author apcev
  */
 public class Dashboard extends javax.swing.JFrame {
-    private String currentEmployeeId;
-    private String firstName;
+    //private String currentEmployeeId;
+    //private String firstName;
+    //private final Dashboard dashboard;
      
     /**
      * Creates new form dashboard
@@ -37,8 +38,9 @@ public class Dashboard extends javax.swing.JFrame {
         setButtonsEnabled(false);
         jLabelGreet.setText("Welcome, " + firstName + "!");
         showEmployeeDetails(employeeId);
-        this.currentEmployeeId = employeeId;
-        this.firstName = firstName;
+        //this.currentEmployeeId = employeeId;
+        //this.firstName = firstName;
+        //this.dashboard = dashboard;
         
         
         jTextFieldSearch.getDocument().addDocumentListener(new DocumentListener() {
@@ -850,7 +852,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void jButtonLeavereqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLeavereqActionPerformed
         // TODO add your handling code here:
-         LeaveRequest newClassInstance = new LeaveRequest(firstName,currentEmployeeId);
+         LeaveRequest newClassInstance = new LeaveRequest(this);
                  newClassInstance.setVisible(true);
                  
                  dispose();
@@ -923,7 +925,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void jButtonViewAllEmployeesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonViewAllEmployeesActionPerformed
         // TODO add your handling code here:
-         Employee newClassInstance = new Employee(currentEmployeeId,firstName);
+         Employee newClassInstance = new Employee(this);
                  newClassInstance.setVisible(true);
                  
                  dispose(); 

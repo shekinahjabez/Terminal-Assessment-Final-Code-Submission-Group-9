@@ -42,18 +42,19 @@ import java.awt.event.KeyEvent;
 public class AddEmployee extends javax.swing.JFrame {
 
     private static final String CSV_FILE = "src\\motorph9\\EmployeeDetails.csv";
-    private String currentEmployeeId;
-    private String firstName;
-    
+    //private String currentEmployeeId;
+    //private String firstName;
+    private final Dashboard dashboard;
     /**
      * Creates new form AddEmployee
      */
-    public AddEmployee(String employeeId, String firstName) {
+    public AddEmployee(Dashboard dashboard) {
         initComponents();
          // Read CSV data and populate the JTable
         populateTableFromCSV(CSV_FILE);
-        this.currentEmployeeId = employeeId;
-        this.firstName = firstName;
+        //this.currentEmployeeId = employeeId;
+        //this.firstName = firstName;
+        this.dashboard = dashboard;
            
         Timer timer = new Timer(1000, new ActionListener() {
             @Override
@@ -473,15 +474,18 @@ public class AddEmployee extends javax.swing.JFrame {
 
     private void jButtonDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDashboardActionPerformed
         // TODO add your handling code here:
-        Dashboard newClassInstance = new Dashboard(firstName,currentEmployeeId);
-                 newClassInstance.setVisible(true);
+        
+        dashboard.setVisible(true);
+
+        /*Dashboard newClassInstance = new Dashboard(firstName,currentEmployeeId);
+                 newClassInstance.setVisible(true);*/
 
                 dispose();
     }//GEN-LAST:event_jButtonDashboardActionPerformed
 
     private void jButtonEmployeelistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEmployeelistActionPerformed
         // TODO add your handling code here:
-         Employee newClassInstance = new Employee(currentEmployeeId,firstName);
+         Employee newClassInstance = new Employee(dashboard);
                  newClassInstance.setVisible(true);
 
                 dispose();
