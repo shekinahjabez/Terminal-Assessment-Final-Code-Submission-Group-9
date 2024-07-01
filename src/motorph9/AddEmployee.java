@@ -42,15 +42,18 @@ import java.awt.event.KeyEvent;
 public class AddEmployee extends javax.swing.JFrame {
 
     private static final String CSV_FILE = "src\\motorph9\\EmployeeDetails.csv";
+    private String currentEmployeeId;
+    private String firstName;
     
     /**
      * Creates new form AddEmployee
      */
-    public AddEmployee() {
+    public AddEmployee(String employeeId, String firstName) {
         initComponents();
-        
          // Read CSV data and populate the JTable
         populateTableFromCSV(CSV_FILE);
+        this.currentEmployeeId = employeeId;
+        this.firstName = firstName;
            
         Timer timer = new Timer(1000, new ActionListener() {
             @Override
@@ -470,16 +473,16 @@ public class AddEmployee extends javax.swing.JFrame {
 
     private void jButtonDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDashboardActionPerformed
         // TODO add your handling code here:
-        Dashboard newClassInstance = new Dashboard();
-                newClassInstance.setVisible(true);
+        Dashboard newClassInstance = new Dashboard(firstName,currentEmployeeId);
+                 newClassInstance.setVisible(true);
 
                 dispose();
     }//GEN-LAST:event_jButtonDashboardActionPerformed
 
     private void jButtonEmployeelistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEmployeelistActionPerformed
         // TODO add your handling code here:
-        Employee newClassInstance = new Employee();
-                newClassInstance.setVisible(true);
+         Employee newClassInstance = new Employee(currentEmployeeId,firstName);
+                 newClassInstance.setVisible(true);
 
                 dispose();
     }//GEN-LAST:event_jButtonEmployeelistActionPerformed
@@ -657,11 +660,11 @@ public class AddEmployee extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+        /*java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new AddEmployee().setVisible(true);
             }
-        });
+        });*/
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

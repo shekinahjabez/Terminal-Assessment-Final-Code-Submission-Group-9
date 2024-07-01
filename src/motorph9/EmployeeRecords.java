@@ -21,12 +21,14 @@ import java.time.YearMonth;
 public class EmployeeRecords extends javax.swing.JFrame {
     
    // private List<String> employeeNumbers
-    private String employeeNo;
+    //private String employeeNo;
+    private String currentEmployeeId;
+    private String firstName;
 
     /**
      * Creates new form EmployeeDetails
      */
-    public EmployeeRecords (String employeeNumber) {
+    public EmployeeRecords (String employeeNumber, String firstName) {
         
         initComponents();
         
@@ -37,6 +39,9 @@ public class EmployeeRecords extends javax.swing.JFrame {
         setLocationRelativeTo(null); 
         
         initializeMonthComboBox();
+        
+        this.currentEmployeeId = employeeNumber;
+        this.firstName = firstName;
         
         Timer timer = new Timer(1000, new ActionListener() {
             @Override
@@ -687,8 +692,8 @@ public class EmployeeRecords extends javax.swing.JFrame {
 
     private void jButtonEmployeelistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEmployeelistActionPerformed
         // TODO add your handling code here:
-        Employee newClassInstance = new Employee();
-                newClassInstance.setVisible(true);
+        Employee newClassInstance = new Employee(currentEmployeeId,firstName);
+                 newClassInstance.setVisible(true);
                 
                 dispose();
 

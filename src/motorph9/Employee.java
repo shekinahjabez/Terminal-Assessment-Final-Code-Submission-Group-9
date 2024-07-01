@@ -39,22 +39,25 @@ import java.util.logging.Logger;
 public class Employee extends javax.swing.JFrame {
     
     private static final String CSV_FILE = "src\\motorph9\\EmployeeDetails.csv";
+    private String currentEmployeeId;
+    private String firstName;
     
     /**
      * Creates new form Employee
      */
-    public Employee() {
+    public Employee(String currentEmployeeId, String firstName) {
         initComponents();
        
-        
         setLocationRelativeTo(null);
         
-       
         populateTableFromCSV(CSV_FILE);
 
         jButtonViewEmployee.setEnabled(false);
 
         jButtonUpdate.setEnabled(false); 
+        
+        this.currentEmployeeId = currentEmployeeId;
+        this.firstName = firstName;
         
        
         
@@ -595,7 +598,7 @@ public class Employee extends javax.swing.JFrame {
 
     private void jButtonDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDashboardActionPerformed
         
-        Dashboard newClassInstance = new Dashboard();
+        Dashboard newClassInstance = new Dashboard(firstName,currentEmployeeId);
                  newClassInstance.setVisible(true);
                  
                  dispose();
@@ -619,7 +622,7 @@ public class Employee extends javax.swing.JFrame {
                     String pagibigNo = (String) jTableEmployees.getValueAt(selectedRow, 6);
 
                     
-                    EmployeeRecords newClassInstance = new EmployeeRecords(employeeNumber);
+                    EmployeeRecords newClassInstance = new EmployeeRecords(employeeNumber,firstName);
                             newClassInstance.setVisible(true);
                             
                             dispose();
@@ -668,7 +671,7 @@ public class Employee extends javax.swing.JFrame {
 
     private void jButtonAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddActionPerformed
         // TODO add your handling code here:
-        AddEmployee newClassInstance = new AddEmployee();
+        AddEmployee newClassInstance = new AddEmployee(currentEmployeeId, firstName);
                    newClassInstance.setVisible(true);
                 
                 dispose();
@@ -702,11 +705,11 @@ public class Employee extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+        /*java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Employee().setVisible(true);
             }
-        });
+        });*/
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
