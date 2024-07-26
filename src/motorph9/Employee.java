@@ -40,8 +40,6 @@ public class Employee extends javax.swing.JFrame {
     
     private static final String CSV_FILE = "src\\motorph9\\EmployeeDetails.csv";
     private final Dashboard dashboard;
-    //private String currentEmployeeId;
-    //private String firstName;
     
     /**
      * Creates new form Employee
@@ -58,10 +56,6 @@ public class Employee extends javax.swing.JFrame {
         jButtonUpdate.setEnabled(false); 
         
         this.dashboard = dashboard;
-        //this.currentEmployeeId = currentEmployeeId;
-        //this.firstName = firstName;
-        
-       
         
         jTableEmployees.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
             @Override

@@ -21,7 +21,6 @@ import java.time.YearMonth;
 public class EmployeeRecords extends javax.swing.JFrame {
     
     private String currentEmployeeId;
-    //private String firstName;
     private final Dashboard dashboard;
 
     /**
@@ -40,7 +39,6 @@ public class EmployeeRecords extends javax.swing.JFrame {
         initializeMonthComboBox();
         
         this.currentEmployeeId = employeeNumber;
-        //this.firstName = firstName;
         this.dashboard = dashboard;
         
         Timer timer = new Timer(1000, new ActionListener() {
@@ -68,12 +66,6 @@ public class EmployeeRecords extends javax.swing.JFrame {
 
          
     }
-    
-    /*public EmployeeRecords() {
-       
-        
-    }*/
-
     
     private void updateTimeAndDate() {
         

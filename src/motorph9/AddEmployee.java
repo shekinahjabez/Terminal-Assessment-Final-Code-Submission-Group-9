@@ -42,8 +42,6 @@ import java.awt.event.KeyEvent;
 public class AddEmployee extends javax.swing.JFrame {
 
     private static final String CSV_FILE = "src\\motorph9\\EmployeeDetails.csv";
-    //private String currentEmployeeId;
-    //private String firstName;
     private final Dashboard dashboard;
     /**
      * Creates new form AddEmployee
@@ -52,8 +50,6 @@ public class AddEmployee extends javax.swing.JFrame {
         initComponents();
          // Read CSV data and populate the JTable
         populateTableFromCSV(CSV_FILE);
-        //this.currentEmployeeId = employeeId;
-        //this.firstName = firstName;
         this.dashboard = dashboard;
            
         Timer timer = new Timer(1000, new ActionListener() {
@@ -476,10 +472,6 @@ public class AddEmployee extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         dashboard.setVisible(true);
-
-        /*Dashboard newClassInstance = new Dashboard(firstName,currentEmployeeId);
-                 newClassInstance.setVisible(true);*/
-
                 dispose();
     }//GEN-LAST:event_jButtonDashboardActionPerformed
 

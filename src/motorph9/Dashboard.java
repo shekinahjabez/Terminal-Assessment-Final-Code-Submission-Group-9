@@ -22,11 +22,7 @@ import java.awt.*;
  *
  * @author apcev
  */
-public class Dashboard extends javax.swing.JFrame {
-    //private String currentEmployeeId;
-    //private String firstName;
-    //private final Dashboard dashboard;
-     
+public class Dashboard extends javax.swing.JFrame { 
     /**
      * Creates new form dashboard
      */
@@ -38,10 +34,6 @@ public class Dashboard extends javax.swing.JFrame {
         setButtonsEnabled(false);
         jLabelGreet.setText("Welcome, " + firstName + "!");
         showEmployeeDetails(employeeId);
-        //this.currentEmployeeId = employeeId;
-        //this.firstName = firstName;
-        //this.dashboard = dashboard;
-        
         
         jTextFieldSearch.getDocument().addDocumentListener(new DocumentListener() {
             @Override

@@ -31,8 +31,6 @@ public class LeaveRequest extends javax.swing.JFrame {
     private List<String[]> leaveBalances;
     private List<LeaveRequestData> leaveRequests = new ArrayList<>();
     private String leaveBalancesFilePath = "src\\motorph9\\LeaveBalances.csv";
-    //private String currentEmployeeId;
-    //private String firstName;
     private final Dashboard dashboard;
     /**
      * Creates new form LeaveRequest
@@ -42,14 +40,8 @@ public class LeaveRequest extends javax.swing.JFrame {
         
         leaveTracker = loadLeaveTracker("src\\motorph9\\LeaveBalances.csv");
         csvReader = new CSVReader("src\\motorph9\\LeaveBalances.csv");
-        //this.currentEmployeeId = currentEmployeeId;
-        //this.firstName = firstName;
         this.dashboard = dashboard;
 
-        //loadLeaveBalancesFromCSV();
-        //updateLeaveBalances();
-        
-        //jButtonCancel.setEnabled(false);
         jButtonClear.setEnabled(false);
         
         ArrayList<Character> sample = new ArrayList<Character>();
